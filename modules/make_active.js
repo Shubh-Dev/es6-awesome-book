@@ -7,3 +7,4 @@ function makeActive(className) {
       }
     });
   }
+  export{makeActive};

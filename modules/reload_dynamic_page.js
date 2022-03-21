@@ -1,4 +1,4 @@
-function reload() {
+export function reload() {
     booksContainer.innerHTML = allBooks.books
       .map(
         (

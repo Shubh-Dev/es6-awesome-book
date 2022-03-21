@@ -1,4 +1,4 @@
-class Books {
+export class Books {
     constructor() {
       if (localStorage.getItem('books') === null) {
         this.books = [];

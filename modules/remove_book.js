@@ -1,4 +1,4 @@
-const removeBook = (bookIndex) => {
+export const removeBook = (bookIndex) => {
     allBooks.removeBook(bookIndex);
     reload();
   };
