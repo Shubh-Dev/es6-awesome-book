@@ -15,4 +15,7 @@ export function reload() {
       booksContainer.style.cssText = 'border: 3px black solid;';
     }
   }
+
+  reload();
+
   
