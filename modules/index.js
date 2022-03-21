@@ -4,5 +4,3 @@ import { reload } from "./modules/reload_dynamic_page";
 import { removeBook } from "./modules/remove_book";
 
 const newObj = new Books();
-
-
