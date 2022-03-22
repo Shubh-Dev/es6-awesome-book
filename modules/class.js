@@ -1,4 +1,4 @@
-export class Books {
+export default class Books {
   constructor() {
     if (localStorage.getItem('books') === null) {
       this.books = [];
@@ -24,5 +24,3 @@ export class Books {
     localStorage.setItem('books', JSON.stringify(this.books));
   }
 }
-
-console.log("hello world");

@@ -1,35 +1,4 @@
-// import { Books } from "./modules/class.js";
-// import { makeActive } from "./modules/make_active.js";
-// import { reload } from "./modules/reload_dynamic_page.js";
-// import { removeBook } from "./modules/remove_book.js";
-// import { sections } from "./modules/make_active.js";
-
-class Books {
-    constructor() {
-      if (localStorage.getItem('books') === null) {
-        this.books = [];
-      } else {
-        this.books = JSON.parse(localStorage.getItem('books'));
-      }
-    }
-  
-    addBook(book) {
-      this.books.push(book);
-  
-      localStorage.setItem('books', JSON.stringify(this.books));
-    }
-  
-    removeBook(bookIndex) {
-      this.books = this.books.filter((item, index) => {
-        if (index !== bookIndex) {
-          return item;
-        }
-        return undefined;
-      });
-  
-      localStorage.setItem('books', JSON.stringify(this.books));
-    }
-  }
+import { Books } from "./modules/class.js";
 
 const booksContainer = document.getElementById('books-container');
 const addBookForm = document.getElementById('add-book');
@@ -37,7 +6,6 @@ const title = document.getElementById('title');
 const author = document.getElementById('author');
 
 const allBooks = new Books();
-console.log(allBooks);
 
 function reload() {
   booksContainer.innerHTML = allBooks.books
