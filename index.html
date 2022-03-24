@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>book | awesome</title>
+    <title>Awesome Books</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -13,23 +13,23 @@
         <nav>
           <a href="/">Awesome Books</a>
           <ul>
-            <li onclick="makeActive('books-list')">List</li>
-            <li onclick="makeActive('add-book')">Add new</li>
-            <li onclick="makeActive('contact')">Contact</li>
+            <li class="books-list">List</li>
+            <li class="add-book">Add new</li>
+            <li class="contact">Contact</li>
           </ul>
         </nav>
       </header>
 
       <div class="date">16th March 2022</div>
 
-      <div class="section books-list active">
+      <div class="section-1">
         <div class="heading">
           <h2>All Awesome Books</h2>
         </div>
         <div id="books-container"></div>
       </div>
 
-      <div class="section add-book">
+      <div class="section-2">
         <h2>Add a new book</h2>
         <form method="post" id="add-book">
           <input type="text" placeholder="Title" id="title" /><br /><br />
@@ -38,13 +38,13 @@
         </form>
       </div>
 
-      <div class="section contact">
+      <div class="section-3">
         <h2>Contact information</h2>
         <p>Do have any questions or you just want to say "Hello"? You can reach out to us!</p>
         <ul>
           <li>Our email: main@mail.com</li>
-          <li>Our phone number: +919844055452</li>
-          <li>Our address: Bangalore, India</li>
+          <li>Our phone number: +25148596857</li>
+          <li>Our address: streetname, 2245 City, Country</li>
         </ul>
       </div>
 

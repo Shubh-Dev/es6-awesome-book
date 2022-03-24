@@ -119,14 +119,12 @@ form input {
   padding: 3px 8px;
 }
 
-.section {
+.section-1,
+.section-2,
+.section-3 {
   display: none;
 }
 
-.section.active {
-  display: flex;
-  flex-direction: column;
-}
 
 .date {
   font-weight: 600;
@@ -156,4 +154,3 @@ footer {
 .contact ul {
   font-weight: 600;
 }
-

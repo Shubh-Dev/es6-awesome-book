@@ -1,4 +1,31 @@
-import { Books } from "./modules/class.js";
+import {sectionBookList, sectionAddBook, sectionContact} from './modules/nav_add_book.js';
+
+class Books {
+  constructor() {
+    if (localStorage.getItem('books') === null) {
+      this.books = [];
+    } else {
+      this.books = JSON.parse(localStorage.getItem('books'));
+    }
+  }
+
+  addBook(book) {
+    this.books.push(book);
+
+    localStorage.setItem('books', JSON.stringify(this.books));
+  }
+
+  removeBook(bookIndex) {
+    this.books = this.books.filter((item, index) => {
+      if (index !== bookIndex) {
+        return item;
+      }
+      return undefined;
+    });
+
+    localStorage.setItem('books', JSON.stringify(this.books));
+  }
+}
 
 const booksContainer = document.getElementById('books-container');
 const addBookForm = document.getElementById('add-book');
@@ -14,7 +41,7 @@ function reload() {
         bookItem,
         index,
       ) => `<div class="book-item"><p><strong>"${bookItem.title}" by ${bookItem.author}.</strong></p>
-      <button onclick="removeBook(${index})">Remove</button>
+      <button class = "bookRemoveButton">Remove</button>
       </div>`,
     )
     .join('');
@@ -43,6 +70,11 @@ const removeBook = (bookIndex) => {
   allBooks.removeBook(bookIndex);
   reload();
 };
+const myBookRemoveButton = document.querySelector('.bookRemoveButton');
+myBookRemoveButton.addEventListener('click', () => {
+ removeBook(index);
+})
+
 /* eslint-disable no-unused-vars */
 
 // Adding Navigation using JS
@@ -51,14 +83,4 @@ const removeBook = (bookIndex) => {
 // let toDay = new Date();
 // dateTime.innerHTML = toDay.getDate() + toDay.getMonth() + toDay.getDay() + '';
 
-const sections = document.querySelectorAll('.section');
 
-function makeActive(className) {
-  sections.forEach((item) => {
-    if (item.classList.contains(className)) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
-    }
-  });
-}
